@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HamRover Support</title>
+<meta name="description" content="Support for HamRover, a rover contest logger for amateur radio operators.">
+<style>
+  :root {
+    --bg: #F4F4F7;
+    --card: #FFFFFF;
+    --text: #1C1C1E;
+    --muted: #4A4A50;
+    --accent: #0057C2;
+    --border: #DCDCE0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121214;
+      --card: #1E1E21;
+      --text: #F2F2F5;
+      --muted: #B8B8C0;
+      --accent: #6FA8FF;
+      --border: #333338;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 6px; }
+  .tagline { color: var(--muted); margin: 0 0 28px; }
+  h2 { font-size: 20px; margin: 0 0 10px; }
+  h3 { font-size: 17px; margin: 18px 0 4px; }
+  p { margin: 0 0 12px; }
+  ul { margin: 0 0 12px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  section {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .email {
+    display: inline-block;
+    margin: 4px 0 12px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  @media (prefers-color-scheme: dark) { .email { color: #0B1A33; } }
+  code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.92em;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1px 6px;
+  }
+  footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>HamRover Support</h1>
+  <p class="tagline">A rover contest logger for amateur radio operators.</p>
+
+  <section aria-labelledby="contact">
+    <h2 id="contact">Contact</h2>
+    <p>For questions, problems, or to request support for another contest, email:</p>
+    <!-- The address is assembled by script so it isn't sitting in the page as plain text for spam harvesters. -->
+    <p><a class="email" id="email-link" href="#contact">Email HamRover Support</a></p>
+    <noscript><p>Email: revraspj [at] gmail [dot] com</p></noscript>
+    <p>To help me answer quickly, please include:</p>
+    <ul>
+      <li>The HamRover version (Settings &rarr; About &rarr; Version)</li>
+      <li>Your iPhone model and iOS version</li>
+      <li>What you were doing and what happened, step by step</li>
+      <li>For export questions: the event's Contest ID and, if you can, the exported <code>.log</code> file</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="faq">
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <h3>Where is my data stored?</h3>
+    <p>Only on your iPhone. HamRover has no accounts and sends nothing to a server. Your events, stops, targets, and contacts are included in your normal iPhone backup (iCloud or computer).</p>
+
+    <h3>Which contests are supported?</h3>
+    <p>The ARRL 10 GHz and Up contest is fully supported. Use a Contest ID in the form <code>ARRL-10-GHZ-YYYY</code>, for example <code>ARRL-10-GHZ-2026</code>. Other grid-based VHF/UHF contests can be logged and exported with generic rules. To request full support for another contest, email me with its name.</p>
+
+    <h3>How do I export my log?</h3>
+    <p>On the Events tab, tap the export button on an event. HamRover reviews the log first, then lets you save or send the Cabrillo file. Events that share a Contest ID, such as both weekends of the same contest, are exported together in one file.</p>
+
+    <h3>Why isn't a contact in my export?</h3>
+    <p>Only contacts marked <strong>Completed</strong> are exported. Contacts marked Planned, Failed, or Skipped are left out, as are contacts you switched off on the review screen. The review screen lists how many were left out and why.</p>
+
+    <h3>Why does the review screen flag duplicates?</h3>
+    <p>A station can be worked once per band from each location. If the same station appears twice on the same band at the same stop, the review screen shows both so you can choose which one counts.</p>
+  </section>
+
+  <section aria-labelledby="privacy">
+    <h2 id="privacy">Privacy</h2>
+    <p>HamRover does not collect any data. Read the <a href="https://jpsarver.github.io/HamRover_Privacy_Policy/">HamRover Privacy Policy</a>.</p>
+  </section>
+
+  <footer>&copy; 2026 HamRover</footer>
+
+</main>
+<script>
+  (function () {
+    var user = "revraspj";
+    var domain = "gmail.com";
+    var address = user + "@" + domain;
+    var link = document.getElementById("email-link");
+    link.href = "mailto:" + address + "?subject=" + encodeURIComponent("HamRover Support");
+    link.textContent = address;
+  })();
+</script>
+</body>
+</html>
